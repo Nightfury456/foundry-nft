@@ -27,7 +27,7 @@ contract MoodNft is ERC721 {
 
     function mint() public {
         _safeMint(msg.sender, s_tokenCounter);
-        s_tokenIdToMood[s_tokenCounter] = Mood.Happy;
+        s_tokenIdToMood[s_tokenCounter] = Mood.HAPPY;
         s_tokenCounter++;
     }
 
@@ -40,7 +40,7 @@ contract MoodNft is ERC721 {
     ) public view override returns (string memory) {
         string memory imageURI;
 
-        if (s_tokenIdToMood = Mood.HAPPY) {
+        if (s_tokenIdToMood[tokenId] == Mood.HAPPY) {
             imageURI = s_happySvgImageUri;
         } else {
             imageURI = s_sadSvgImageUri;
